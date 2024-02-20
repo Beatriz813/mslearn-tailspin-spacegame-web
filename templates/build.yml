@@ -3,7 +3,7 @@ parameters:
 
 steps:
 - task: DotNetCoreCLI@2
-  displayName: 'Build the project - ${{ parametes.buildConfiguration }}'
+  displayName: 'Build the project - ${{ parameters.buildConfiguration }}'
   inputs:
     command: 'build'
     arguments: '--no-restore --configuration ${{ parameters.buildConfiguration }}'
@@ -17,4 +17,3 @@ steps:
     publishWebProjects: false
     arguments: '--no-build --configuration ${{ parameters.buildConfiguration }} --output $(Build.ArtifactStagingDirectory)/${{ parameters.buildConfiguration }}'
     zipAfterPublish: true
-    
